@@ -24,7 +24,7 @@ My first reflex seeing this announcement was to delete all AMIs that were a) cre
 
 Unfortunately, I wasn't able to filter for `Last launched time` to be null in the AWS Console.
 
-![AWS Console: filtering options for 'Last launched time'](../images/2024-02-02-aws-ami-deletion/console.png)
+![AWS Console: filtering options for 'Last launched time'](/images/2024-02-02-aws-ami-deletion/console.png)
 
 Anyway, the AWS CLI is the better choice. This is how you can list your AMIs using the AWS CLI, no matter if they ever have been launched or not:
 
@@ -75,12 +75,12 @@ After you've reviewed the output, either remove the `echo` or  copy & paste it i
 
 Deleting the AMI itself doesn't save any money. What actually lowers the bill is finally deleting the EBS snapshots that unterpin the AMIs:
 
-![EC2 Console listing EBS snapshots](../images/2024-02-02-aws-ami-deletion/snapshots.png)
+![EC2 Console listing EBS snapshots](/images/2024-02-02-aws-ami-deletion/snapshots.png)
 
 Given that one can't delete a snapshot, which is in use by an AMI, you can just go ahead and try to delete all EBS snapshots - assuming that you have no manually created snapshots in this region that you want to keep.
 To be sure, let's limit deletion to EBS snapshots that have a description "Created by CreateImage" - or "Copied for DestinationAmi" (latter one is used in cases when an AMI is copied to a different region).
 
-![EC2 Console listing EBS snapshots, which were created from cross-region AMI copy](../images/2024-02-02-aws-ami-deletion/snapshots-copy.png)
+![EC2 Console listing EBS snapshots, which were created from cross-region AMI copy](/images/2024-02-02-aws-ami-deletion/snapshots-copy.png)
 
 This will list your snapshots:
 
