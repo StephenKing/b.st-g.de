@@ -26,7 +26,7 @@ owner:
   avatar:         avatar.jpg
   email:          st+blog-spam@st-g.de
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Steffen is a software engineer (mobile core) at EMnify, helping to provide connectivity for the Internet of Things. During night, he takes care of the TYPO3 open source project infrastructure.
+  description:    Steffen develops and operators mobile core networks at emnify, helping to provide connectivity for the Internet of Things.
   # Social networking links used in footer. Update and remove as you like.
   twitter:        StGebert
   facebook:
