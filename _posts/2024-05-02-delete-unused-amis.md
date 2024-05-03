@@ -16,7 +16,7 @@ So far, there has been no easy way to identify, which AMIs are actually in use, 
 Yesterday, AWS has added a new attribute to [simplify visibility into active AMIs](https://aws.amazon.com/de/about-aws/whats-new/2024/05/amazon-ec2-simplifies-visibility-active-amis/). While I would still argue that this does _not_ list the AMIs in use by any currently running EC2 instances, it is at least a step in the right direction.
 Using the `LastLaunchedTime` attribute, you can now see, when - and if at all - this AMI has been used. Luckily, this works also across accounts.
 
-As some of our teams have automated workflows to build weekly AMIs, but not necessarily use them, I saw a savings potential going into the thousands of dollars.
+As some of our teams at [emnify](https://www.emnify.com/) have automated workflows to build weekly AMIs, but not necessarily use them, I saw a savings potential going into the thousands of dollars.
 
 ## Finding unused AMIs
 
@@ -47,7 +47,7 @@ $ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-0
 To now only list the images which have never been launched, you can use the following command (adding the beautiful double negation `!not_null(LastLaunchedTime)`):
 
 ```bash
-$ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2025-01-01` && !not_null(LastLaunchedTime)] | sort_by(@, &CreationDate)[].[ImageId,ImageLocation,LastLaunchedTime]'
+$ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-01` && !not_null(LastLaunchedTime)] | sort_by(@, &CreationDate)[].[ImageId,ImageLocation,LastLaunchedTime]'
 [
     [
         "ami-1234567890abcdef1",
