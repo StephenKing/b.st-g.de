@@ -29,7 +29,7 @@ Unfortunately, I wasn't able to filter for `Last launched time` to be null in th
 Anyway, the AWS CLI is the better choice. This is how you can list your AMIs using the AWS CLI, no matter if they ever have been launched or not:
 
 ```bash
-$ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-01`] | sort_by(@, &CreationDate)[].[ImageId,ImageLocation,LastLaunchedTime]'
+$ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-01`] | sort_by(@, &LastLaunchedTime)[].[ImageId,ImageLocation,LastLaunchedTime]'
 [
     [
         "ami-1234567890abcdef0",
@@ -43,6 +43,8 @@ $ aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-0
     ],
 ...
 ```
+
+In case you get an error `In function sort_by(), invalid type for value:...`, then you need to upgrade your AWS CLI (`aws --version`, 2.15.43 is working).
 
 To now only list the images which have never been launched, you can use the following command (adding the beautiful double negation `!not_null(LastLaunchedTime)`):
 
@@ -64,7 +66,7 @@ For us, this list has been really, really long.
 By iterating over the list of unused AMIs, you can now delete them using the AWS CLI:
 
 ```bash
-for image in $(aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-01` && !not_null(LastLaunchedTime)] | sort_by(@, &CreationDate)[].[ImageId][]' --output text); do
+$ for image in $(aws ec2 describe-images --owners self --query 'Images[?CreationDate<`2024-01-01` && !not_null(LastLaunchedTime)] | sort_by(@, &CreationDate)[].[ImageId][]' --output text); do
   echo "# $image";
   echo aws ec2 deregister-image --image-id $image; # remove the echo to execute it 
 done
