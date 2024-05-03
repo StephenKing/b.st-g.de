@@ -146,3 +146,37 @@ Cleaning up AMIs that have been used to start an EC2 instance before... let's sa
 However, the devil might be more in the detail here, as you should understand your infrastructure well, if you might ever still need those AMIs.
 
 I'm curious to see our bill tomorrow.
+
+## Update: one day later
+
+As AWS billing is slow and my script didn't finish, no results yet on cost savings.
+
+For finding AMIs that haven't been launched before a certain date (before 2023 in the example), you can use the following query:
+
+```bash
+$ aws ec2 describe-images --owners self --query 'Images[?LastLaunchedTime <`2023-01-01`] | sort_by(@, &LastLaunchedTime)[].[ImageId,ImageLocation,CreationDate,LastLaunchedTime]'
+```
+
+Then as above, you can just iterate over this.
+
+## Update: What AMIs are really in use
+
+At [emnify](https://www.emnify.com), we are big fans of [Steampipe](https://steampipe.io/). If you are really interested in understanding, what AMIs are currently in use, this provides a great way to query AWS.
+Once you've set up read access to your complete AWS organisation, you could issue the following query:
+
+```sql
+SELECT
+    image_id,
+    COUNT(*)
+FROM
+    aws_ec2_instance
+GROUP BY 1
+ORDER BY 2 DESC
+
+| image_id       | count |
+|----------------|-------|
+| ami-12345678   |    42 |
+| ami-23456789   |    14 |
+```
+
+One could then go ahead and deregister all AMIs which are not listed here. Just an idea (for a follow-up blog post).
