@@ -11,6 +11,6 @@ share: true
 ---
 
 As I recently gave two talks at the _AWS Community Day - Bay Area_ as well as _DENOG12_, where I explained how we implemented two of our recent projects at EMnify,
-I was interviewed in the [EMnify blog](https://www.youtube.com/watch?v=WAypNBSGQpw).
+I was interviewed in the [EMnify blog](https://www.emnify.com/blog/behind-the-scenes-emnify-cellular-iot).
 
 If you are interested in my other talks, see the [Speaking](/speaking.md) page. Happy watching!
