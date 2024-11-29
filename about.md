@@ -44,4 +44,6 @@ Computer scientist living near Würzburg, Germany. Open source enthusiast with i
 [![AWS Certified SAP on AWS - Specialty Logo](/images/aws-cert-sap.png){:height="130px" width="130px"}](https://www.credly.com/badges/0a3de6f1-e25a-49dc-929b-b006d65d6bb1)
 [![AWS Certified Security - Specialty Logo](/images/aws-cert-security.png){:height="130px" width="130px"}](https://www.credly.com/badges/332c15cc-2567-4867-a2c3-9e2607385f08)
 
+## Expired
+
 [![HashiCorp Certified: Terraform Associate Logo](/images/hashicorp-cert-terraform-associate.png){:height="130px" width="130px"}](https://www.credly.com/badges/7e3bd335-2cd5-42e5-ae33-884d390fc6fe)
