@@ -29,9 +29,11 @@ Computer scientist living near Würzburg, Germany. Open source enthusiast with i
 ## Certifications
 
 [![AWS Certified Cloud Practitioner Logo](/images/aws-cert-cloud-practitioner.png){:height="130px" width="130px"}](https://www.credly.com/badges/292dd973-644c-4a63-af57-ecb32062d91e/)
+[![AWS Certified AI Practitioner Logo](/images/aws-cert-ai-practitioner.png){:height="130px" width="130px"}](https://www.credly.com/badges/692e452c-5190-4f89-89c9-b9e13c868bb5)
 [![AWS Certified Solutions Architect - Associate Logo](/images/aws-cert-sa-assoc.png){:height="130px" width="130px"}](https://www.credly.com/badges/cc056a22-17d3-4564-82ed-22daafdaab5c/)
 [![AWS Certified Data Engineer - Associate Logo](/images/aws-cert-data-engineer.png){:height="130px" width="130px"}](https://www.credly.com/badges/fe314741-1494-4b30-a584-395864b878d7/)
 [![AWS Certified Developer - Associate Logo](/images/aws-cert-developer.png){:height="130px" width="130px"}](https://www.credly.com/badges/902ae054-7fd9-4fd8-a3b8-d2094558df35/)
+[![AWS Certified Machine Learning - Associate Logo](/images/aws-cert-ml-assoc.png){:height="130px" width="130px"}](https://www.credly.com/badges/5b90f095-328b-44b6-98b2-2e1d1ebc6a7e)
 [![AWS Certified SysOp Administrator- Associate Logo](/images/aws-cert-sysop.png){:height="130px" width="130px"}](https://www.credly.com/badges/2263f3bf-b0bc-4c79-8465-1115ba6a5c8b/)
 [![AWS Certified Solutions Architect - Professional Logo](/images/aws-cert-sa.png){:height="130px" width="130px"}](https://www.credly.com/badges/31cb2dce-31c7-4963-a434-6962072cdace/)
 [![AWS Certified DevOps Engineer - Professional Logo](/images/aws-cert-devops.png){:height="130px" width="130px"}](https://www.credly.com/badges/8ed87466-f2c6-4ffb-9e17-ee1026126a1b)
